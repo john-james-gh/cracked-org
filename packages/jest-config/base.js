@@ -15,4 +15,5 @@ export const config = {
   collectCoverage: true, // This is set to false in watch mode via CLI.
   coverageReporters: ["lcov"],
   passWithNoTests: true,
+  reporters: [["github-actions", { silent: false }], "summary"],
 };
