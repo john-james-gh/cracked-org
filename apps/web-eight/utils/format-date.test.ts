@@ -7,4 +7,9 @@ describe("format-date.ts", () => {
     const result = formatDate(testDate);
     expect(result).toBe("12/25/2023, 12:00:00 AM");
   });
+
+  it("should throw an error if the date is invalid", () => {
+    const testDate = new Date("invalid");
+    expect(() => formatDate(testDate)).toThrow("Invalid date");
+  });
 });
