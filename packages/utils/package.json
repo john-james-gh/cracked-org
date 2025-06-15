@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./format-date": "./src/index.ts"
+    "./format-date": "./src/format-date.ts"
   },
   "scripts": {
     "check-types": "tsc --noEmit",
