@@ -34,6 +34,12 @@ jobs:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
+    upload-coverage:
+      name: Upload Coverage
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
   lint:
     name: Lint
     uses: ./.github/workflows/setup.yml
