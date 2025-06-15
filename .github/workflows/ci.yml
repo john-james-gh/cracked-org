@@ -34,3 +34,35 @@ jobs:
     with:
       command: test
       command_name: Test # This is the step name in logs
+
+  lint:
+    name: Lint
+    uses: ./.github/workflows/setup.yml
+    needs: build
+    with:
+      command: lint
+      command_name: Lint # This is the step name in logs
+
+  check-types:
+    name: Check Types
+    uses: ./.github/workflows/setup.yml
+    needs: build
+    with:
+      command: check-types
+      command_name: Check Types # This is the step name in logs
+
+  check-format:
+    name: Check Format
+    uses: ./.github/workflows/setup.yml
+    needs: build
+    with:
+      command: check-format
+      command_name: Check Format # This is the step name in logs
+
+  check-unused:
+    name: Check Unused
+    uses: ./.github/workflows/setup.yml
+    needs: build
+    with:
+      command: check-unused
+      command_name: Check Unused # This is the step name in logs
