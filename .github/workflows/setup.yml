@@ -7,6 +7,11 @@ on:
       command_name:
         required: true
         type: string
+    secrets:
+      TURBO_TOKEN:
+        required: false
+      TURBO_TEAM:
+        required: false
 
 jobs:
   setup:
@@ -15,7 +20,7 @@ jobs:
 
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
     steps:
       # Checkout code
