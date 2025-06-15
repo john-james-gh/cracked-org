@@ -18,6 +18,9 @@ concurrency:
 jobs:
   build:
     name: Build
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
     uses: ./.github/workflows/setup.yml
     with:
       command: build
