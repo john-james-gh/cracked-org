@@ -30,9 +30,9 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Setup pnpm
       # Omit version input to use the version in the packageManager field in the package.json.
-      - uses: pnpm/action-setup@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
