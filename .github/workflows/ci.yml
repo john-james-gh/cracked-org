@@ -14,10 +14,9 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
-# To use Remote Caching, uncomment the next lines and follow the steps below.
-# env:
-#  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-#  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
 jobs:
   build:
