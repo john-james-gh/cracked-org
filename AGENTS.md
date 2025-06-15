@@ -19,6 +19,7 @@ cracked-org/
 │   └── web-ten/            # Next.js app (port 3010)
 ├── packages/               # Shared packages
 │   ├── ui/                 # React component library
+│   ├── utils/              # Utility functions
 │   ├── eslint-config/      # ESLint configuration
 │   ├── typescript-config/  # TypeScript configuration
 │   ├── tailwind-config/    # Tailwind CSS configuration
@@ -61,6 +62,14 @@ cracked-org/
   - `Card` - Card layout component
   - `Code` - Code display component
 - **Usage**: Import with `@repo/ui/component-name`
+
+### `@repo/utils` - Utility Functions
+
+- **Purpose**: Shared utility functions used across all apps
+- **Location**: `packages/utils/src/`
+- **Functions**:
+  - `formatDate` - Date formatting utility with locale support
+- **Usage**: Import with `@repo/utils/format-date`
 
 ### `@repo/eslint-config` - ESLint Configuration
 
@@ -168,6 +177,10 @@ cd packages/ui
 pnpm check-types      # Type check UI package
 pnpm lint             # Lint UI package
 
+cd packages/utils
+pnpm check-types      # Type check utils package
+pnpm lint             # Lint utils package
+
 # Root-level operations
 pnpm build            # Build everything
 pnpm test             # Test everything
@@ -178,7 +191,7 @@ pnpm lint             # Lint everything
 
 - `turbo.json` - Turborepo task definitions and caching
 - `pnpm-workspace.yaml` - Workspace package definitions
-- `package.json` - Root scripts and dependencies
+- `package.json` - Root scripts and dependencies (only monorepo management tools)
 - `apps/*/package.json` - Individual app configurations
 - `packages/*/package.json` - Shared package configurations
 - `.prettierrc` - Code formatting rules
@@ -195,6 +208,7 @@ Each Next.js app can be deployed independently:
 1. **Workspace Dependencies**: Use `workspace:*` for internal package references
 2. **Port Management**: Each app uses a different port (3001-3010)
 3. **Shared Components**: Import from `@repo/ui/component-name`
-4. **Type Safety**: All packages use TypeScript with shared config
-5. **Caching**: Turborepo caches build outputs for faster rebuilds
-6. **Testing**: Jest configuration is shared across all packages
+4. **Shared Utilities**: Import from `@repo/utils/function-name`
+5. **Type Safety**: All packages use TypeScript with shared config
+6. **Caching**: Turborepo caches build outputs for faster rebuilds
+7. **Testing**: Jest configuration is shared across all packages
