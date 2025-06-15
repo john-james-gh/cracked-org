@@ -3,12 +3,12 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "check-format": "prettier . --check && sort-package-json \"**/package.json\" --check",
+    "check-format": "prettier . --check && sort-package-json \"**/package.json\" --check --ignore \"**/node_modules\"",
     "check-types": "turbo run check-types",
     "check-unused": "knip",
     "clean": "pnpm -r exec rimraf .turbo .next node_modules",
     "dev": "turbo run dev",
-    "format": "prettier . --write && sort-package-json \"**/package.json\"",
+    "format": "prettier . --write && sort-package-json \"**/package.json\" --ignore \"**/node_modules\"",
     "lint": "turbo run lint",
     "prepare": "husky"
   },
