@@ -47,3 +47,10 @@ jobs:
       # Run command (build or test, etc.)
       - name: ${{ inputs.command_name }}
         run: pnpm ${{ inputs.command }}
+
+      # Conditionally upload coverage if this is the test step
+      - name: Upload coverage reports to Codecov
+        if: ${{ inputs.command == 'test' }}
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
