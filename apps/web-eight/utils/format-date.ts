@@ -7,5 +7,5 @@ export function formatDate(date: Date | string) {
     dateObj = date;
   }
 
-  return dateObj.toLocaleString("en-US");
+  return dateObj.toLocaleDateString("en-US");
 }
