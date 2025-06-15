@@ -6,10 +6,6 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-permissions:
-  # to check out code
-  contents: read
-
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
