@@ -1,2 +1,2 @@
 @import "tailwindcss";
-@import "@repo/tailwind-config"; /** This is the shared styles for all applications */
+@import "@repo/tailwind-config"; /** These are the shared styles for all applications */
