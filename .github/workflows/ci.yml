@@ -32,6 +32,9 @@ jobs:
     with:
       command: test
       command_name: Test # This is the step name in logs
+    secrets:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
   lint:
     name: Lint
@@ -40,6 +43,9 @@ jobs:
     with:
       command: lint
       command_name: Lint # This is the step name in logs
+    secrets:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
   check-types:
     name: Check Types
@@ -48,6 +54,9 @@ jobs:
     with:
       command: check-types
       command_name: Check Types # This is the step name in logs
+    secrets:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
   check-format:
     name: Check Format
