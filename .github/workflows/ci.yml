@@ -14,34 +14,23 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+# To use Remote Caching, uncomment the next lines and follow the steps below.
+# env:
+#  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+#  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
 jobs:
   build:
     name: Build
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    # To use Remote Caching, uncomment the next lines and follow the steps below.
-    # env:
-    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-    #  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+    uses: ./.github/workflows/setup.yml
+    with:
+      command: build
+      command_name: Build # This is the step name in logs
 
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      # Omit version input to use the version in the packageManager field in the package.json.
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build
-        run: pnpm build
+  test:
+    name: Test
+    uses: ./.github/workflows/setup.yml
+    needs: build
+    with:
+      command: test
+      command_name: Test # This is the step name in logs

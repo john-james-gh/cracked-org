@@ -1,0 +1,39 @@
+on:
+  workflow_call:
+    inputs:
+      command:
+        required: true
+        type: string
+      command_name:
+        required: true
+        type: string
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      # Setup pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      # Setup Node.js
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      # Install dependencies
+      - name: Install dependencies
+        run: pnpm install
+
+      # Run command (build or test, etc.)
+      - name: ${{ inputs.command_name }}
+        run: pnpm ${{ inputs.command }}
