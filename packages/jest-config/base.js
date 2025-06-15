@@ -4,7 +4,7 @@ export const config = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
   },
-  moduleFileExtensions: ["ts", "tsx"],
+  moduleFileExtensions: ["ts", "tsx", "js"],
   modulePathIgnorePatterns: [
     "<rootDir>/node_modules",
     "<rootDir>/dist",
