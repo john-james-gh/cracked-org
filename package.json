@@ -1,5 +1,5 @@
 {
-  "name": "repo",
+  "name": "cracked-org",
   "private": true,
   "scripts": {
     "build": "turbo run build",
