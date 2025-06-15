@@ -4,6 +4,7 @@
  */
 const config = {
   "**/*": "prettier --write --ignore-unknown",
+  "**/package.json": "sort-package-json",
 };
 
 export default config;

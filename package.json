@@ -3,13 +3,13 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier . --write",
-    "check-format": "prettier . --check",
+    "check-format": "prettier . --check && sort-package-json \"**/package.json\" --check",
     "check-types": "turbo run check-types",
     "check-unused": "knip",
     "clean": "pnpm -r exec rimraf .turbo .next node_modules",
+    "dev": "turbo run dev",
+    "format": "prettier . --write && sort-package-json \"**/package.json\"",
+    "lint": "turbo run lint",
     "prepare": "husky"
   },
   "devDependencies": {
