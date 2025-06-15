@@ -9,6 +9,7 @@ on:
 permissions:
   # to check out code
   contents: read
+  pull-requests: write
 
 concurrency:
   group: ci-${{ github.ref }}
