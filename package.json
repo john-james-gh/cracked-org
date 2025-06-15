@@ -10,7 +10,9 @@
     "dev": "turbo run dev",
     "format": "prettier . --write && sort-package-json \"**/package.json\" --ignore \"**/node_modules\"",
     "lint": "turbo run lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "turbo run test",
+    "test-watch": "turbo run test-watch"
   },
   "devDependencies": {
     "husky": "^9.1.7",
