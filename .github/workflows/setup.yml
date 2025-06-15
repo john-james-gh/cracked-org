@@ -12,6 +12,8 @@ on:
         required: false
       TURBO_TEAM:
         required: false
+      CODECOV_TOKEN:
+        required: false
 
 jobs:
   setup:
