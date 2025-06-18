@@ -1,8 +1,4 @@
-if (!process.env.NEXT_SERVICE_URL) {
-  throw new Error("NEXT_SERVICE_URL is not set");
-}
-
-const url = process.env.NEXT_SERVICE_URL;
+const url = process.env.NEXT_SERVICE_URL ?? "http://localhost:3002";
 
 export async function POST() {
   const headers = new Headers();
