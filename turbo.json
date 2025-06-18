@@ -1,6 +1,7 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "ui": "tui",
+  "globalEnv": ["APPLICATIONINSIGHTS_CONNECTION_STRING"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],

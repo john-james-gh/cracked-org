@@ -1,4 +1,4 @@
-const url = process.env.NEXT_SERVICE_URL ?? "http://localhost:3004";
+const url = process.env.NEXT_PUBLIC_NEXT_SERVICE_URL ?? "http://localhost:3004";
 
 export async function POST(request: Request) {
   const headers = new Headers();
