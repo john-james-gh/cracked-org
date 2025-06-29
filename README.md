@@ -212,3 +212,26 @@ Each Next.js app can be deployed independently:
 5. **Type Safety**: All packages use TypeScript with shared config
 6. **Caching**: Turborepo caches build outputs for faster rebuilds
 7. **Testing**: Jest configuration is shared across all packages
+
+## 🔌 MCP (Model Context Protocol) Servers
+
+This project integrates with MCP servers to enhance AI agent capabilities:
+
+### Available MCP Servers
+
+- **Built-in MCPs**: Standard MCP servers available by default
+- **GitHub MCP**: Provides GitHub integration capabilities including:
+  - Repository management
+  - Issue and pull request operations
+  - Code review functionality
+  - Branch and commit operations
+  - Notification management
+
+### Usage
+
+AI agents can leverage these MCP servers to:
+
+- Interact with GitHub repositories
+- Manage development workflows
+- Automate code review processes
+- Handle issue tracking and project management
